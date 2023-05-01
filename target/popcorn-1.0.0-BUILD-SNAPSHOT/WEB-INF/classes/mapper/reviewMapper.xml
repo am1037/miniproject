@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rm">
+    <select id="one" resultType="com.multi.popcorn.ReviewVO">
+        select * from multi.review
+        where review_ID = #{id}
+    </select>
+    <select id="fromTo" resultType="com.multi.popcorn.ReviewVO">
+        <![CDATA[
+        select * from multi.review
+        where review_ID > #{min} and review_ID < #{max}
+        ]]>
+    </select>
+</mapper>
